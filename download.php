@@ -38,7 +38,8 @@ try {
             $output .= $number + 1 . ") " . $answer[0] . " (incorrect) \n";
         }
     }
-
+    
+    header('Content-Disposition: attachment; filename='.basename($file));
     fwrite($txt, $output);
     fclose($txt);
     readfile($file);
