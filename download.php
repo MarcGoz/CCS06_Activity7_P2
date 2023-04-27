@@ -9,6 +9,7 @@ use App\QuestionManager;
 $score = null;
 $answers = [];
 $results = [];
+$i = 1;
 
 try {
     $manager = new QuestionManager;
@@ -31,7 +32,7 @@ try {
     $output .= "Score: ".$score." out of ".$manager->getQuestionSize()."\n";
     $output .= "Answers:\n\n";
 
-    $i = 1;
+    
 foreach ($results as $answer) {
     if ($answer[1] == 1) {
         $output .= $i . ") " . $answer[0] . " (correct) \n";
